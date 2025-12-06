@@ -51,6 +51,22 @@ enum class Rank : uint8_t
     THREE = 11,
     TWO   = 12,
 };
+enum class RankAdjusted : uint8_t
+{
+    ACE   = 1,
+    KING  = 10,
+    QUEEN = 10,
+    JACK  = 10,
+    TEN   = 10,
+    NINE  = 9,
+    EIGHT = 8,
+    SEVEN = 7,
+    SIX   = 6,
+    FIVE  = 5,
+    FOUR  = 4,
+    THREE = 3,
+    TWO   = 2,
+};
 
 inline std::string_view to_sv(const Rank& status)
 {
@@ -82,6 +98,39 @@ inline std::string_view to_sv(const Rank& status)
             return "THREE";
         case Rank::TWO:
             return "TWO";
+    }
+    assert(false);
+}
+inline std::int16_t to_int(const Rank& status)
+{
+    switch (status)
+    {
+        case Rank::ACE:
+            return 0;
+        case Rank::KING:
+            return 10;
+        case Rank::QUEEN:
+            return 10;
+        case Rank::JACK:
+            return 10;
+        case Rank::TEN:
+            return 10;
+        case Rank::NINE:
+            return 9;
+        case Rank::EIGHT:
+            return 8;
+        case Rank::SEVEN:
+            return 7;
+        case Rank::SIX:
+            return 6;
+        case Rank::FIVE:
+            return 5;
+        case Rank::FOUR:
+            return 4;
+        case Rank::THREE:
+            return 3;
+        case Rank::TWO:
+            return 2;
     }
     assert(false);
 }

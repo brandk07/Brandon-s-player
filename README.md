@@ -53,3 +53,9 @@ git commit -m "Renamed player directory to my name"
 ```bash
 git push origin main
 ```
+
+
+
+./blackjack.sh build
+./blackjack.sh test
+
